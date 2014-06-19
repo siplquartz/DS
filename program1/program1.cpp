@@ -1,33 +1,34 @@
 #include <iostream>
-#include <time.h>
 
 using namespace std;
+class checkUniqe{
 
-int myvalue(int n) {
-    int i, j, k = 0;
-    for (i  = n/2; i <= n; i++)
-        for (j = 2; j <= n; j = j * 2)
-            k = k + n/2;
-    return k;
-    //cout <<  "inner k = "<< k;
- }
+ private:
+  string str;
 
+ public:
+   checkUniqe(string charr){
+      str = charr;
+   }
+
+  bool  check(){
+     for( int i = 0; i< str.length(); i++){
+         for(int j=i+1; j<str.length(); j++){
+              if(str[i] == str[j] )
+               return false;
+             }
+          }
+     return true;
+     }
+    
+} ;
 int main()
 {
-    
-    clock_t start, end;
-    
-    start = clock();
-    
-    //perform calculations for which performance needs to be checked
-    cout <<" k = ";
-    cout <<  myvalue(10000000);
-    cout <<" \n ";
-        
-    end = clock();
-    
-    cout << "Time required for execution: "
-    << (double)(end-start)/CLOCKS_PER_SEC
-    << " seconds." << "\n\n";  
-    
+  checkUniqe obj("complexity"); 
+  bool result =  obj.check(); 
+  if(result)
+   cout << "String has unique characters.";
+  else
+    cout << "String has duplicate characters." ; 
+  return 0;
 }
