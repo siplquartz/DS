@@ -1,5 +1,5 @@
+// 1.Implement an algorithm to determine if a string has all unique characters What if you can not use additional data structures?
 #include <iostream>
-
 using namespace std;
 class checkUniqe{
 
@@ -7,6 +7,7 @@ class checkUniqe{
   string str;
 
  public:
+   // function for check uniqe characters
    checkUniqe(string charr){
       str = charr;
    }
