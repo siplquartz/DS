@@ -1,8 +1,12 @@
+//Write a method to decide if two strings are anagrams or not 
+
 #include <iostream>
 using namespace std;
 class anagrams{
   
  public:
+ 
+ //  function for sort characters
   char * sort(char *str){
     char temp;
     for(int i = 0; str[i]!='\0'; i++){
@@ -17,6 +21,7 @@ class anagrams{
     return str;
 }
  
+ // function for check Anagrams
  bool checkAnagrams(char *str1,char *str2){
   for(int i=0; str1[i]!='\0'; i++  ){
       if(str1[i]!=str2[i] ){
