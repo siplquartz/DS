@@ -1,1 +1,12 @@
 // Algorithm
+
+checkUnique(str)
+(1) integer i 
+(2) set i = 0
+(3) Repeat step 4 to 6 while str[i] != NULL
+(4) integer j 
+(5) set j = i + 1  
+(6) Repeat step 7 while str[j] != NULL
+(7) if str[i]== str[j] return false
+(8) return true   
+
