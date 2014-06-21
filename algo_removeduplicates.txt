@@ -1,0 +1,12 @@
+removeDuplicates(str,length)
+(1) if(length<2) return;
+(2) integer index
+(3) set index = 1
+(4) integer i
+(5) set i = 0
+(6) Repeat step 5 to 11  str[i] != NULL
+(7) integer j
+(8) Repeat step 9  str[i] != NULL 
+(9) if str[i] == str[j] break; 
+(10) if J == index str[index] = str[j]; index++
+(11) str[index] = '\0'
