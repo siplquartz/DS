@@ -1,53 +1,45 @@
 #include<iostream>
 using namespace std;
 
-class imageRotate {
- public: float* rotate(float *mainAMatrix,int n){
-  //double tempMatrix[n][n];
-  //return 
- }
-};
 
 int main(){
- int n=3;
- float matrix[3][3];
- float tempMatrix[3][3];
+ int size=3;
+ int image[3][3];
+ int tempImage[3][3];
 
- float mVal= 1.5;
- for (int i = 0; i < n; ++i)
- {
+ int count= 1;
+ // Fill the matrix image
+ for (int i = 0; i < size; i++)  {
 
-  for (int j = 0; j <n; ++j)
-  {
-   matrix[i][j]=mVal;
-   cout<<matrix[i][j];
-   mVal=mVal+2;
-   
-   cout<<"  ";
-  }
-  cout<<"\n";
+    for (int j = 0; j <size; j++)  {
+         image[i][j]=count;
+          cout<<image[i][j];
+          count=count+1;
+          cout<<"  ";
+    }
+    cout<<"\n";
  }
 
   cout<<"\n";
- for (int i = 0; i < n; ++i)
- {
-  for (int j = 0; j <n; ++j)
-  {
-   tempMatrix[i][j] = matrix[(n-1)-j][i];
-   cout<<tempMatrix[i][j];
-   cout<<" ";
+ 
+ // rotating the image 
+ for (int i = 0; i < size; i++)
+   {
+      for (int j = 0; j <size; j++)
+      {
+       tempImage[i][j] = image[(size-1)-j][i];
+       cout<<tempImage[i][j];
+      cout<<" ";
   }
  }
  cout<<"\n";
- cout<<"\n Rotated matrix are\n";
- for (int i = 0; i < n; ++i)
- {
-
-  for (int j = 0; j <n; ++j)
-  {
-   cout<<tempMatrix[i][j];
-   cout<<" ";
-  }
+ cout<<"\n Rotated image  \n";
+ 
+ for (int i = 0; i < size; i++) {
+    for (int j = 0; j <size; j++)   {
+       cout<<tempImage[i][j];
+       cout<<" ";
+     }
   cout<<"\n";
  }
  return 0;
