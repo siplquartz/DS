@@ -35,4 +35,17 @@ int main() {
 
      return 0;     
  } 
+/*
+Test Cases
+(1) input string  -: "ahgtuggghhj"
+    output -:  "jhhgggutgha"
+  
+(2) input string  -: "s@@chin"
+    output -:  "nihc@@s"
 
+
+(3) input string  -: "s achi n"
+    output -:  "n ihca s"
+
+
+*/
