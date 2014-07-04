@@ -57,3 +57,21 @@ int main() {
     cout << "String is not anagrams" ; 
    return 0;
 }
+
+
+/*
+Test Cases
+(1) input string  first -: "s@ch1n" 
+    input string  second -: "s@ch1n"
+    output -:  "String is anagrams."
+  
+(2) input string  first -: "dsclass" 
+    input string  second -: "classds"
+    output -:  "String is anagrams."
+
+(3) input string  first -: "school" 
+    input string  second -: "college"
+    output -:  "String is not anagrams."
+
+
+*/
