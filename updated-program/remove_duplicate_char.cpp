@@ -33,15 +33,9 @@ int main(){
      
      cout<<"Please provide string:\n";
      cin>>stringArray;
-     
-     if(sizeof(stringArray)>1) {
-        char  *str1 = obj.removeDuplicates(stringArray);
-        cout << str1;
-     }else{
-         cout<<"Provided string must content more than two characters\n";
-         std::exit(EXIT_FAILURE);
-     }
-   return 0;
+     char  *str1 = obj.removeDuplicates(stringArray);
+     cout << str1;
+     return 0;
 }
 
 /*
