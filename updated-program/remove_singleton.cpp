@@ -11,17 +11,22 @@ class removeSingleton{
         
             int n = str1.length();
              string str2;
-             
-             for(int i=0;i<=n;i++){
-                int j= i+1;
-               if(str1[i] == ch && str1[j] == ch ){
-                  str2 += str1[i];
-                  str2 +=  str1[j];  
-                } else if(str1[i] != ch)
-                    str2 += str1[i];
-          
-             }
-       
+              
+              for (int i = 0; i<=n; i++) {
+                  if(str1[i]==ch) {
+                    if(i==0) {
+                      if(str1[i]==str1[i+1]){
+                        str2 += str1[i];                        
+                      }
+                    } else {
+                      if(str1[i]==str1[i+1] || str1[i]==str1[i-1]){
+                        str2 +=str1[i];                        
+                      }
+                    }
+                  } else {                    
+                    str2 +=str1[i];                    
+                  }
+                }
          return str2;
         }
  };
