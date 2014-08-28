@@ -3,85 +3,74 @@ Input:  azxxzy
 Output: ay
 First "azxxzy" is reduced to "azzy". The string "azzy" contains duplicates, 
 so it is further reduced to "ay".
-
 Input: geeksforgeeg
 Output: gksfor
 First "geeksforgeeg" is reduced to "gksforgg". The string "gksforgg" contains 
 duplicates, so it is further reduced to "gksfor".
-
 Input: caaabbbaacdddd
 Output: Empty String
-
 Input: acaaabbbacdddd
 Output: acac
 */
 #include<iostream>
+#include <string.h>
 using namespace std;
 class removeDuplicate {
 public:
 	removeDuplicate(){}
 	
-	char * removeAdjacent(char* str,int strLength) {
-		
+	char * removeAdjacent(char* str,int strLen) {
+		int next=0;
 		char prev=str[0];
-		int repCounter=0;		
-		int nextPointer=0;
+		int rCounter=0;		
+		str[strLen+1]='\0';
+		str[strLen]='s';
 		
-		str[strLength+1]='\0';
-		str[strLength]='e';
-		
-		for (int i = 0; str[i]!='\0'; ++i)	{
+		for (int i = 0; str[i]!='\0'; i++)	{
 			if(str[i]==prev) {
-				repCounter++;
-			}    
-			else if (repCounter>1)	{
+				rCounter++;
+			}else if (rCounter>1)	{
 				int j;
-				int totalShift=0;
-				for (j = i; str[j]!='\0'; ++j) 
+				int shift=0;
+				for (j = i; str[j]!='\0'; j++) 
 				{
-					str[nextPointer++]=str[j];
-					totalShift++;
+					str[next++]=str[j];
+					shift++;
 				}
-				nextPointer=nextPointer-totalShift;
-				str[(nextPointer+j)-i]='\0';
-				i=i-repCounter;
-				repCounter=1;
+				next=next-shift;
+				str[(next+j)-i]='\0';
+				i=i-rCounter;
+				rCounter=1;
 					
 			} else {
-				nextPointer=i;
+				next=i;
 			}
-			prev=str[i];
+		  prev=str[i];
+		
 		}
 
-		int lenghtAfter=strlen(str);
-		str[lenghtAfter-1]='\0';
-		lenghtAfter-=1;
+		int remStrLen=strlen(str);
+		str[remStrLen-1]='\0';
+		remStrLen-=1;
 
-		// checking length of string before or after apply algo
-		if(lenghtAfter!=strLength && lenghtAfter>1)
-			return removeAdjacent(str,lenghtAfter);
+		if(remStrLen!=strLen && remStrLen>1)
+			return removeAdjacent(str,remStrLen);
 		else return str;
 
 		return str;
 	}
 };
 
-void main(){
-	cout<<"Enter a string to remove adjacent duplicates(max lenght 100) : ";
+int main(){
+	cout<<"Provide a string to remove adjacent duplicates : ";
 	char str[100];
 	if(cin.getline(str,100)) {
-		removeDuplicate rad;
-		int strLength = strlen(str);
-		char *result = rad.removeAdjacent(str,strLength);
-		printf("\nString after removed duplicate character: %s\n", result);
+		removeDuplicate obj;
+		int strLen = strlen(str);
+		char *result = obj.removeAdjacent(str,strLen);
+		printf("\n String after removed adjacent duplicates: %s\n", result);
 	} else {
 		cout<<"Wrong inputs provided.";
 	}
+return 0;	
 }
-/*
-Bese case of this program is o(n)
-Worst case of this program is 
-
-
-
-*/
